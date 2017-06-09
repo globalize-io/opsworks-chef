@@ -23,24 +23,24 @@ template '/etc/mysql/set.password' do
 end
 
 execute 'create-app-db' do
-  command "echo \"create database app\" \| mysql -u root"
+  command "echo \"create database #{node['mysql']['database_name']}\" \| mysql -u root"
   action :nothing
   notifies :run, 'execute[app-permissions]'
 end
 
 execute 'app-permissions' do
-  command "echo \"grant all privileges on app.* to #{node['mysql']['user']}@'localhost' identified by '#{node['mysql']['pass']}'\" \| mysql -u root"
+  command "echo \"grant all privileges on app.* to #{node['mysql']['user_name']}@'localhost' identified by '#{node['mysql']['user_password']}'\" \| mysql -u root"
   notifies :run, 'execute[change-root-password]'
   action :nothing
 end
 
 execute 'change-root-password' do
-  command "mysqladmin -h localhost -u root password  #{node['mysql']['root']}"
+  command "mysqladmin -h localhost -u root password  #{node['mysql']['root_password']}"
   action :nothing
 end
 
 wordpress_latest = '/tmp/wordpress-latest.tar.gz'
-installed_file = node['phpapp']['path'] + '/index.php'
+installed_file = node['wordpress']['path'] + '/index.php'
 
 remote_file '/tmp/wordpress-latest.tar.gz' do
   source 'http://wordpress.org/latest.tar.gz'
@@ -48,7 +48,7 @@ remote_file '/tmp/wordpress-latest.tar.gz' do
   not_if 'test -f ' + wordpress_latest
 end
 
-directory node['phpapp']['path'] do
+directory node['wordpress']['path'] do
   owner 'www-data'
   group 'www-data'
   mode '0755'
@@ -57,12 +57,12 @@ directory node['phpapp']['path'] do
 end
 
 execute 'untar-wordpress' do
-  cwd node['phpapp']['path']
+  cwd node['wordpress']['path']
   command 'tar --strip-components 1 -xzf ' + wordpress_latest
   not_if 'test -f ' + installed_file
 end
 
-directory node['phpapp']['path'] do
+directory node['wordpress']['path'] do
   owner 'www-data'
   group 'www-data'
   mode '0755'

@@ -1,8 +1,9 @@
 # MySQL settings
-default["mysql"]["root"] = "th1s1sn0ts4f3101"
-default["mysql"]["pass"] = "th1s1sn0ts4f3555"
-default["mysql"]["user"] = "wordpressuser"
+default['mysql']['root_password'] = 'J9pe}z%s]2bUwaMJw6;ZaKLmRfZPeNDsB7u2jkMEW'
+default['mysql']['user_name']     = 'wpuser'
+default['mysql']['user_password'] = 'bkW.2fNcaY#d99zpvnQhE8kqbncfg*qi9jBozt(aG'
+default['mysql']['database_name'] = 'wordpress'
 
 # WP HTTP_ROOT
-default["phpapp"]["path"] = "/var/www/wordpress/"
+default['wordpress']['path'] = '/var/www/wordpress/'
 
