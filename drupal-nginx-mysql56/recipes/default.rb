@@ -43,7 +43,7 @@ drupal_latest = '/tmp/drupal-latest.tar.gz'
 installed_file = node['drupal']['path'] + '/index.php'
 
 remote_file '/tmp/drupal-latest.tar.gz' do
-  source 'http://drupal.org/latest.tar.gz'
+  source "https://ftp.drupal.org/files/projects/drupal-#{node['drupal']['version']}.tar.gz"
   mode '0644'
   not_if 'test -f ' + drupal_latest
 end

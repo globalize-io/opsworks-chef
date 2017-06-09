@@ -5,5 +5,5 @@ default['mysql']['user_password'] = 'bkW.2fNcaY#d99zpvnQhE8kqbncfg*qi9jBozt(aG'
 default['mysql']['database_name'] = 'wordpress'
 
 # WP HTTP_ROOT
-default['drupal']['path'] = '/var/www/drupal/'
+default['wordpress']['path'] = '/var/www/wordpress/'
 
