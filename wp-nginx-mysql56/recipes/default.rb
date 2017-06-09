@@ -35,7 +35,7 @@ execute 'app-permissions' do
 end
 
 execute 'change-root-password' do
-  command "mysqladmin -h localhost -u root password  #{node['mysql']['root_password']}"
+  command "mysqladmin -h localhost -u root password '#{node['mysql']['root_password']}'"
   action :nothing
 end
 
