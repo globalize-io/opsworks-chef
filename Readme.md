@@ -24,7 +24,7 @@ Instructions
 
 3. Add a new layer using the following settings:
 
-Layer type: **Custom**
+* Layer type: **Custom**
 
 4. Modify the layer Recipes with the following values:
 
