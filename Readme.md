@@ -7,6 +7,13 @@ Translation Exchange Chef scripts for AWS
 
 The scripts allow you to quickly launch new instances of WordPress on AWS using OpsWorks.
 
+It will install the following components:
+
+* Nginx
+* php5-fpm
+* MysQL 
+* WordPress
+
 
 Instructions
 ==================
@@ -36,11 +43,18 @@ Instructions
 
 5. Add a new instance for the layer and launch it.
 
+* Once the instance is up and running you can navigate to the instance's IP address and configure your WordPress.
 
-You are done! 
+6. Configure your WordPress database using the following information:
 
-Once the instance is up and running you can navigate to the instance's IP address and configure your WordPress.
+* Database name: wordpress
+* Username: wpuser
+* Password: bkW.2fNcaY#d99zpvnQhE8kqbncfg*qi9jBozt(aG
 
+
+Once WordPress is configured, you can create your admin user and proceed with installing themes and plugins.
+
+Good luck!
 
 
 Links
