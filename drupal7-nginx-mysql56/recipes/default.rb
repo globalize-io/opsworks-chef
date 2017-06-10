@@ -60,6 +60,13 @@ execute 'untar-drupal' do
   cwd node['drupal']['path']
   command 'tar --strip-components 1 -xzf ' + drupal_latest
   not_if 'test -f ' + installed_file
+  notifies :run, 'execute[update-drupal-permissions]'
+end
+
+execute 'update-drupal-permissions' do
+  command "sudo chown -R www-data:www-data #{node['drupal']['path']}"
+  command "sudo chmod -R g+rw #{node['drupal']['path']}"
+  action :nothing
 end
 
 directory node['drupal']['path'] do
@@ -101,8 +108,3 @@ execute 'reload-nginx' do
   action :nothing
 end
 
-execute 'update-drupal-permissions' do
-  command "chown -R www-data:www-data #{node['drupal']['path']}"
-  command "chmod -R g+rw #{node['drupal']['path']}"
-  action :nothing
-end

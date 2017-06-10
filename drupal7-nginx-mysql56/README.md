@@ -37,7 +37,7 @@ Instructions
 
 * Under Custom Chef Recipes, add the following recipe to the Setup phase:
 
-  **drupal-nginx-mysql56**
+  **drupal7-nginx-mysql56**
 
 * Save the layer.
 
