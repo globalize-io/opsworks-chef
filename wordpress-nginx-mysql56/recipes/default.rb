@@ -60,6 +60,13 @@ execute 'untar-wordpress' do
   cwd node['wordpress']['path']
   command 'tar --strip-components 1 -xzf ' + wordpress_latest
   not_if 'test -f ' + installed_file
+  notifies :run, 'execute[wordpress-permissions]'
+end
+
+execute 'wordpress-permissions' do
+  command "chown -R www-data:www-data #{node['wordpress']['path']}"
+  command "chmod -R g+rw #{node['wordpress']['path']}"
+  action :nothing
 end
 
 directory node['wordpress']['path'] do
@@ -101,8 +108,3 @@ execute 'reload-nginx' do
   action :nothing
 end
 
-execute 'update-permissions' do
-  command "sudo chown -R www-data:www-data #{node['wordpress']['path']}"
-  command "sudo chmod -R g+rw #{node['wordpress']['path']}"
-  action :nothing
-end
