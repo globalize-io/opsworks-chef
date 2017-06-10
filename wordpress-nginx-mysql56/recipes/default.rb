@@ -64,18 +64,18 @@ execute 'untar-wordpress' do
 end
 
 execute 'wordpress-permissions' do
-  command "chown -R www-data:www-data #{node['wordpress']['path']}"
-  command "chmod -R g+rw #{node['wordpress']['path']}"
+  command "sudo chown -R www-data:www-data #{node['wordpress']['path']}"
+  command "sudo chmod -R g+rw #{node['wordpress']['path']}"
   action :nothing
 end
 
-directory node['wordpress']['path'] do
-  owner 'www-data'
-  group 'www-data'
-  mode '0755'
-  action :create
-  recursive true
-end
+# directory node['wordpress']['path'] do
+#   owner 'www-data'
+#   group 'www-data'
+#   mode '0755'
+#   action :create
+#   recursive true
+# end
 
 template '/etc/nginx/nginx.conf' do
  source 'nginx.conf.erb'
