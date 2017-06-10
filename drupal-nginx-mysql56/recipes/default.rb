@@ -29,7 +29,7 @@ execute 'create-app-db' do
 end
 
 execute 'app-permissions' do
-  command "echo \"grant all privileges on app.* to #{node['mysql']['user_name']}@'localhost' identified by '#{node['mysql']['user_password']}'\" \| mysql -u root"
+  command "echo \"grant all privileges on #{node['mysql']['database_name']}.* to #{node['mysql']['user_name']}@'localhost' identified by '#{node['mysql']['user_password']}'\" \| mysql -u root"
   notifies :run, 'execute[change-root-password]'
   action :nothing
 end
