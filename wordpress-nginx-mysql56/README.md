@@ -25,7 +25,7 @@ Instructions
 * Default operating system: **Ubuntu 14.04 LTS**
 * Use custom Chef cookbooks: **Yes**
 * Repository type: **Git**
-* Repository URL: https://github.com/translationexchange/trex-wordpress-chef.git
+* Repository URL: https://github.com/translationexchange/trex-chef.git
 * Default root device type: **EBS backed**
 
 

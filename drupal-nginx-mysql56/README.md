@@ -25,7 +25,7 @@ Instructions
 * Default operating system: **Ubuntu 14.04 LTS**
 * Use custom Chef cookbooks: **Yes**
 * Repository type: **Git**
-* Repository URL: https://github.com/translationexchange/trex-wordpress-chef.git
+* Repository URL: https://github.com/translationexchange/trex-chef.git
 * Default root device type: **EBS backed**
 
 
@@ -37,7 +37,7 @@ Instructions
 
 * Under Custom Chef Recipes, add the following recipe to the Setup phase:
 
-  **wordpress-nginx-mysql56**
+  **drupal-nginx-mysql56**
 
 * Save the layer.
 
@@ -47,12 +47,12 @@ Instructions
 
 6. Configure your WordPress database using the following information:
 
-* Database name: wordpress
-* Username: wpuser
+* Database name: drupal
+* Username: drupaluser
 * Password: bkW.2fNcaY#d99zpvnQhE8kqbncfg*qi9jBozt(aG
 
 
-Once WordPress is configured, you can create your admin user and proceed with installing themes and plugins.
+Once Drupal is configured, you can create your admin user and proceed with installing themes and plugins.
 
 Good luck!
 
