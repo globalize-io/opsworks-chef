@@ -39,7 +39,9 @@ Instructions
 
   **drupal8-nginx-mysql56**
 
-* Save the layer.
+* Add the following package to be installed during setup:
+ 
+  **php5-gd**
 
 5. Add a new instance for the layer and launch it.
 
