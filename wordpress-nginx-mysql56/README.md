@@ -47,9 +47,10 @@ Instructions
 
 6. Configure your WordPress database using the following information:
 
-* Database name: wordpress
-* Username: wpuser
-* Password: bkW.2fNcaY#d99zpvnQhE8kqbncfg*qi9jBozt(aG
+* Database name: **wordpress**
+* Username: **wpuser**
+* Password: **bkW.2fNcaY#d99zpvnQhE8kqbncfg*qi9jBozt(aG**
+* Database host: **localhost**
 
 
 Once WordPress is configured, you can create your admin user and proceed with installing themes and plugins.
