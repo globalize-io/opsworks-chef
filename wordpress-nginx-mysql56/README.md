@@ -5,57 +5,15 @@
 Translation Exchange Chef scripts for AWS
 =====================
 
-The scripts allow you to quickly launch new instances of WordPress on AWS using OpsWorks.
+The scripts offer quick and easy way to install WordPress and Drupal on AWS.
 
-It will install the following components:
+Please read instructions for WordPress here:
 
-* Nginx
-* php5-fpm
-* MysQL 
-* WordPress
+https://github.com/translationexchange/trex-chef/tree/master/wordpress-nginx-mysql56
 
+Please read instructions for Drupal here:
 
-Instructions
-==================
-
-1. Login to AWS and navigate to OpsWorks (https://console.aws.amazon.com/opsworks/home)
-2. Click on "Add stack" and create a new stack using the following settings:
-
-* Chef version: **11.10**
-* Default operating system: **Ubuntu 14.04 LTS**
-* Use custom Chef cookbooks: **Yes**
-* Repository type: **Git**
-* Repository URL: https://github.com/translationexchange/trex-wordpress-chef.git
-* Default root device type: **EBS backed**
-
-
-3. Add a new layer using the following settings:
-
-* Layer type: **Custom**
-
-4. Modify the layer Recipes with the following values:
-
-* Under Custom Chef Recipes, add the following recipe to the Setup phase:
-
-  **wordpress-nginx-mysql56**
-
-* Save the layer.
-
-5. Add a new instance for the layer and launch it.
-
-* Once the instance is up and running you can navigate to the instance's IP address and configure your WordPress.
-
-6. Configure your WordPress database using the following information:
-
-* Database Name: **wordpress**
-* Username: **wpuser**
-* Password: **bkW.2fNcaY#d99zpvnQhE8kqbncfg*qi9jBozt(aG**
-* Database Host: **localhost**
-
-
-Once WordPress is configured, you can create your admin user and proceed with installing themes and plugins.
-
-Good luck!
+https://github.com/translationexchange/trex-chef/tree/master/drupal-nginx-mysql56
 
 
 Links
