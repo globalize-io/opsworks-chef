@@ -102,7 +102,7 @@ execute 'reload-nginx' do
 end
 
 execute 'update-permissions' do
-  command "chown -R www-data:www-data #{node['wordpress']['path']}"
-  command "chmod -R g+rw #{node['wordpress']['path']}"
+  command "sudo chown -R www-data:www-data #{node['wordpress']['path']}"
+  command "sudo chmod -R g+rw #{node['wordpress']['path']}"
   action :nothing
 end
