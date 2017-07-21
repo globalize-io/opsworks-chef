@@ -37,7 +37,7 @@ Instructions
 
 * Under Custom Chef Recipes, add the following recipe to the Setup phase:
 
-  **wp-nginx-mysql56**
+  **wordpress-nginx-mysql56**
 
 * Save the layer.
 
