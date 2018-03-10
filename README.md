@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://avatars0.githubusercontent.com/u/1316274?v=3&s=200">
+  <img src="https://avatars1.githubusercontent.com/u/31640526?s=200&v=4">
 </p>
 
-Translation Exchange Chef scripts for AWS
+Globalize Chef scripts for AWS
 =====================
 
 The scripts offer quick and easy way to install WordPress and Drupal on AWS.
